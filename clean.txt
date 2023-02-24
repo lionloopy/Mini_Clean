@@ -1,0 +1,30 @@
+components:
+	-Layout / 전체 틀
+	-Form / 제출
+	-body / 게시글 보여주기
+
+pages
+	-Login / 로그인
+	/id, pw, 회원가입 이동 버튼
+
+	-SignUp / 회원가입
+	/id, pw, 닉네임, 회원가입 후 로그인 창 이동
+
+	-Home / 메인페이지
+	/리스트 보여주기, 상세페이지 & 작성 페이지로 이동 가능
+
+	-Board / 작성 페이지
+	/작성 input, 작성하면 등록됨
+
+	-Detail / 상세 페이지
+	/상세 정보 보여주기, 댓글 기능
+
+redux 
+	-config / configStore / 모듈담기
+	-modules
+
+shared
+	-Router / 페이지 나누고 경로 설정해주기
+
+api 
+	-clean

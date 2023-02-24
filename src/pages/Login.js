@@ -1,7 +1,13 @@
 import React from "react";
+import Layout from "../components/Layout";
+import Header from "../components/Header";
 
 function Login() {
-  return <div>Login</div>;
+  return (
+    <Layout>
+      <Header></Header>
+    </Layout>
+  );
 }
 
 export default Login;

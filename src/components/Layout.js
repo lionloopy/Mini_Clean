@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 function Layout(props) {
-  return <Layout>{props.children}</Layout>;
+  return <LayoutBox>{props.children}</LayoutBox>;
 }
 
 export default Layout;
 
-const Layout = styled.div`
-  width: 1200px;
+const LayoutBox = styled.div`
+  width: 100%;
   height: 800px;
 `;

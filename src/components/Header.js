@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { GiBroom } from "react-icons/gi";
 import { FaUserCircle } from "react-icons/fa";
+import { AiFillHome } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const logoStyle = {
@@ -16,9 +18,21 @@ function Header() {
     height: "40px",
     margin: "auto 0px",
   };
+  const homeStyle = {
+    color: "white",
+    width: "30px",
+    height: "30px",
+    margin: "auto 0px",
+  };
+  const navigate = useNavigate();
   return (
     <HeaderBox>
-      <div></div>
+      <AiFillHome
+        style={homeStyle}
+        onClick={() => {
+          navigate("/");
+        }}
+      />
       <TitleBox>
         <GiBroom style={logoStyle} />
         <Logo>청소 대장</Logo>

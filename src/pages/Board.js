@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import styled from "styled-components";
 import { useMutation, useQueryClient } from "react-query";
 import { addBoard } from "../api/clean";
+import axios from "axios";
 
 function Board() {
   //랜덤 아이디 생성
@@ -36,11 +37,29 @@ function Board() {
     setTitle("");
     setContent("");
   };
+  const fileInput = React.useRef(null);
+  const onImgButton = (event) => {
+    event.preventDefault();
+    fileInput.current.click();
+  };
+  const onImgHandler = async (event) => {
+    const formData = new FormData();
+    formData.append("file", event.target.files[0]);
+    const response = await axios.post("http://localhost:4000/api", formData);
+  };
   return (
     <>
       <Header />
       <FormBox onSubmit={onSubmitHandler}>
-        {/* <input placeholder="이미지" /> */}
+        <button onClick={onImgButton}>파일 업로드</button>
+        <input
+          type="file"
+          accept="image/*"
+          name="fileUpload"
+          style={{ display: "none" }}
+          ref={fileInput}
+          onChange={onImgHandler}
+        />
         <TitleInput
           type="text"
           name="title"
